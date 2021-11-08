@@ -22,7 +22,7 @@ def get_person(name: str):
 
 # !!!!!!!!!!!!!!!!API !!!!!!!!!!!!!!!
 
-@api.route('/doc/', methods=['POST'])
+@api.route('/doc/')
 class HelloApi(Resource):
     def get(self):
         return {'hi': 'yeah'},200
