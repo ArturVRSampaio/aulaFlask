@@ -3,7 +3,7 @@ from flask_restx import Api, Resource
 
 
 app = Flask(__name__, static_folder='./templates')
-api = Api(app, title="minha api", description="description for api")
+api = Api(app, title="minha api", description="description for api", documentation='/documentation')
 
 @app.route('/', methods=['GET'])
 def hello_world():
