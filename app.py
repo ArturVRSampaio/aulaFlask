@@ -1,9 +1,11 @@
 from flask import Flask, render_template
 from flask_restx import Api, Resource
-
+from flask_admin import Admin
 
 app = Flask(__name__, static_folder='./templates')
-api = Api(app, title="minha api", description="description for api", documentation='/documentation')
+app.config['FLASK_ADMIN_SWATCH'] = 'darkly'
+admin = Admin(app, name='admin area', template_mode='bootstrap3')
+api = Api(app, title="minha api", description="description for api")
 
 @app.route('/', methods=['GET'])
 def hello_world():
